@@ -1,0 +1,22 @@
+---
+
+- name: Create Project
+  ansible.builtin.uri:
+    url: "{{ omurl }}"
+    user: "{{ omapiuser }}"
+    #password: your_pass
+    method: GET
+    #body: "{{ lookup('ansible.builtin.file','issue.json') }}"
+    force_basic_auth: true
+    status_code: '201'
+    body_format: 'json'
+    headers:
+      Content-Type: 'application/json'
+    return_content: true
+  register: "{{ project_id }}"
+  until: project_id.status == 201
+  retries: '3'
+
+- name: Spit Project ID
+  debug:
+    msg: "{{ project_id }}"
