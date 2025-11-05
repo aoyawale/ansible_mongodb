@@ -10,3 +10,8 @@ logfile: '/home/mongo/deploy/logs/create_project_alerts_"{{ project_name }}"_"{{
 project_name: ''
 echo_message: ''
 user_running: "{{ ansible_user }}"
+delete_projects: 'home/mongo/deploy/bin/"{{ script_name }}'
+script_name: 
+acd_template: ''
+project_logs: '/home/mongo/deploy/logs/create_project."{{ project_name }}".log'
+mnemonic: ''
