@@ -1,0 +1,12 @@
+#SPDX-License-Identifier: MIT-0
+---
+# defaults file for mongodb
+
+omapiuser:  ''
+omurl: ''
+omapiuser: ''
+omurl: ''
+logfile: '/home/mongo/deploy/logs/create_project_alerts_"{{ project_name }}"_"{{ ansible_date}}".log'
+project_name: ''
+echo_message: ''
+user_running: "{{ ansible_user }}"
